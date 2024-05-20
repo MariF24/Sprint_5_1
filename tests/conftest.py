@@ -5,4 +5,5 @@ from selenium import webdriver
 def driver():
     chrome = webdriver.Chrome()
     chrome.get("https://stellarburgers.nomoreparties.site/")
-    return chrome
+    yield chrome
+    chrome.quit()
